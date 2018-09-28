@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Stormy</string>
+    <string name="error_title">Oopps! Sorry!</string>
+    <string name="error_message">There was an error</string>
+    <string name="error_ok_button_text">Ok</string>
+    <string name="network_unavaiable_message">Network is UnAvailable</string>
+    <string name="no_weather_data">No Weather data</string>
+</resources>
