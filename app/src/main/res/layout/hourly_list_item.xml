@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:background="@drawable/bg_gradient"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp"
+    tools:background="@drawable/bg_gradient">
 
     <TextView
         android:id="@+id/timeLabel"
@@ -15,18 +15,18 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        tools:text="12pm"
         android:textColor="#ffffffff"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        tools:text="12pm" />
 
     <ImageView
         android:id="@+id/iconImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_toEndOf="@+id/timeLabel"
         android:layout_toRightOf="@+id/timeLabel"
-        android:layout_centerInParent="true"
-        app:srcCompat="@drawable/partly_cloudy"/>
+        app:srcCompat="@drawable/partly_cloudy" />
 
     <TextView
         android:id="@+id/temperatureLabel"
@@ -35,21 +35,21 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerInParent="true"
-        android:textSize="24sp"
         android:textColor="#ffffffff"
-        tools:text="100"/>
+        android:textSize="24sp"
+        tools:text="100" />
 
     <TextView
         android:id="@+id/summaryLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/iconImageView"
         android:layout_toEndOf="@+id/iconImageView"
         android:layout_toLeftOf="@+id/temperatureLabel"
+        android:layout_toRightOf="@id/iconImageView"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:textColor="#ffffffff"
-        tools:text="Partly Cloudly"/>
+        tools:text="Partly Cloudly" />
 
 </RelativeLayout>

@@ -4,10 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
-/**
- * Created by ocarino99 on 3/1/18.
- */
-
 public class Current {
     private String mIcon;
     private long mTIme;
@@ -33,7 +29,7 @@ public class Current {
         this.mIcon = mIcon;
     }
 
-    public int getIconId(){
+    public int getIconId() {
         return Forecast.getIconId(mIcon);
     }
 
@@ -41,10 +37,10 @@ public class Current {
         return mTIme;
     }
 
-    public String getFormattedTime(){
+    public String getFormattedTime() {
         SimpleDateFormat formatter = new SimpleDateFormat("h:mm a");
         formatter.setTimeZone(TimeZone.getTimeZone(getTimeZone()));
-        Date dateTime = new Date(getTime() *1000);
+        Date dateTime = new Date(getTime() * 1000);
         String timeString = formatter.format(dateTime);
 
         return timeString;
@@ -55,7 +51,7 @@ public class Current {
     }
 
     public int getTemperature() {
-        return (int)Math.round(mTemperature);
+        return (int) Math.round(mTemperature);
     }
 
     public void setmTemperature(double mTemperature) {
@@ -71,8 +67,8 @@ public class Current {
     }
 
     public int getmPrecipChance() {
-        double precipPercentage = mPrecipChance *100;
-        return (int)Math.round(precipPercentage);
+        double precipPercentage = mPrecipChance * 100;
+        return (int) Math.round(precipPercentage);
     }
 
     public void setmPrecipChance(double mPrecipChance) {

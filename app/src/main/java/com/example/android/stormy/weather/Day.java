@@ -7,9 +7,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
-/**
- * Created by ocarino99 on 3/10/18.
- */
 
 public class Day implements Parcelable {
 
@@ -21,7 +18,6 @@ public class Day implements Parcelable {
 
     public Day() {
     }
-
 
     public long getTime() {
         return mTime;
@@ -40,7 +36,7 @@ public class Day implements Parcelable {
     }
 
     public int getTemperatureMax() {
-        return (int)Math.round(mTemperatureMax);
+        return (int) Math.round(mTemperatureMax);
     }
 
     public void setTemperatureMax(double temperatureMax) {
@@ -63,14 +59,14 @@ public class Day implements Parcelable {
         mTimeZone = timeZone;
     }
 
-    public int getIconId(){
+    public int getIconId() {
         return Forecast.getIconId(mIcon);
     }
 
-    public String getDayOfTheWeek(){
+    public String getDayOfTheWeek() {
         SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
         formatter.setTimeZone(TimeZone.getTimeZone(mTimeZone));
-        Date dateTime = new Date(mTime *1000);
+        Date dateTime = new Date(mTime * 1000);
         return formatter.format(dateTime);
     }
 
@@ -88,6 +84,7 @@ public class Day implements Parcelable {
         parcel.writeString(mIcon);
         parcel.writeString(mTimeZone);
     }
+
     private Day(Parcel in) {
         mTime = in.readLong();
         mSummary = in.readString();

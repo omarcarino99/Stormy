@@ -19,7 +19,8 @@ import butterknife.ButterKnife;
 public class HourlyActivity extends AppCompatActivity {
 
     private Hour[] mHours;
-    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    @BindView(R.id.recyclerView)
+    RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +30,9 @@ public class HourlyActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Parcelable[] parcelables = intent.getParcelableArrayExtra(MainActivity.HOURLY_FORECAST);
-        mHours = Arrays.copyOf(parcelables, parcelables.length,Hour[].class);
+        mHours = Arrays.copyOf(parcelables, parcelables.length, Hour[].class);
 
-        HourAdapter adapter = new HourAdapter(this,mHours);
+        HourAdapter adapter = new HourAdapter(this, mHours);
         mRecyclerView.setAdapter(adapter);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);

@@ -14,25 +14,21 @@ import com.example.android.stormy.weather.Hour;
 
 import org.w3c.dom.Text;
 
-/**
- * Created by ocarino99 on 3/18/18.
- */
 
 public class HourAdapter extends RecyclerView.Adapter<HourAdapter.HourViewHolder> {
 
     private Hour[] mHours;
     private Context mContext;
 
-    public HourAdapter(Context context,Hour[] hours){
+    public HourAdapter(Context context, Hour[] hours) {
         mContext = context;
         mHours = hours;
     }
 
-
     @Override
     public HourAdapter.HourViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.hourly_list_item,parent,false);
+                .inflate(R.layout.hourly_list_item, parent, false);
 
         return new HourViewHolder(view);
     }
@@ -40,8 +36,6 @@ public class HourAdapter extends RecyclerView.Adapter<HourAdapter.HourViewHolder
     @Override
     public void onBindViewHolder(HourAdapter.HourViewHolder holder, int position) {
         holder.bindHour(mHours[position]);
-
-
     }
 
     @Override
@@ -58,8 +52,8 @@ public class HourAdapter extends RecyclerView.Adapter<HourAdapter.HourViewHolder
 
         public HourViewHolder(View itemView) {
             super(itemView);
-            mTimeLabel = (TextView)itemView.findViewById(R.id.timeLabel);
-            mSummaryLabel=(TextView)itemView.findViewById(R.id.summaryLabel);
+            mTimeLabel = (TextView) itemView.findViewById(R.id.timeLabel);
+            mSummaryLabel = (TextView) itemView.findViewById(R.id.summaryLabel);
             mTemperatureLabel = (TextView) itemView.findViewById(R.id.temperatureLabel);
             mIconImageView = (ImageView) itemView.findViewById(R.id.iconImageView);
 
@@ -68,7 +62,6 @@ public class HourAdapter extends RecyclerView.Adapter<HourAdapter.HourViewHolder
 
         @Override
         public void onClick(View view) {
-
             String time = mTimeLabel.getText().toString();
             String temperature = mTemperatureLabel.getText().toString();
             String summary = mSummaryLabel.getText().toString();
@@ -76,10 +69,10 @@ public class HourAdapter extends RecyclerView.Adapter<HourAdapter.HourViewHolder
                     time,
                     temperature,
                     summary);
-            Toast.makeText(mContext,message,Toast.LENGTH_LONG).show();
+            Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
         }
 
-        public void bindHour(Hour hour){
+        public void bindHour(Hour hour) {
             mTimeLabel.setText(hour.getHour());
             mSummaryLabel.setText(hour.getSummary());
             mTemperatureLabel.setText(hour.getTemperature() + "");

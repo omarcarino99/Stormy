@@ -11,10 +11,6 @@ import android.widget.TextView;
 import com.example.android.stormy.R;
 import com.example.android.stormy.weather.Day;
 
-/**
- * Created by ocarino99 on 3/13/18.
- */
-
 public class DayAdapter extends BaseAdapter{
 
     private Context mContext;
@@ -44,7 +40,6 @@ public class DayAdapter extends BaseAdapter{
     public View getView(int position, View view, ViewGroup viewGroup) {
         ViewHolder holder;
 
-
         if (view == null){
             //brand new
             view = LayoutInflater.from(mContext).inflate(R.layout.daily_list_item,null);
@@ -53,9 +48,6 @@ public class DayAdapter extends BaseAdapter{
             holder.temperatureLabel = (TextView)view.findViewById(R.id.tempLabel);
             holder.dayLabel = (TextView)view.findViewById(R.id.dayNameLabel);
             holder.imgTempCircle = (ImageView)view.findViewById(R.id.circleImageView);
-
-
-
             view.setTag(holder);
         }
         else{
@@ -63,7 +55,6 @@ public class DayAdapter extends BaseAdapter{
         }
 
         Day day = mDays[position];
-
         holder.iconImageView.setImageResource(day.getIconId());
         holder.temperatureLabel.setText(day.getTemperatureMax() + "");
         holder.dayLabel.setText(day.getDayOfTheWeek());

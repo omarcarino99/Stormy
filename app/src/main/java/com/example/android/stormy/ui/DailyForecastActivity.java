@@ -2,6 +2,8 @@ package com.example.android.stormy.ui;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +19,8 @@ import com.example.android.stormy.adapters.DayAdapter;
 import com.example.android.stormy.weather.Day;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,11 +28,12 @@ import butterknife.ButterKnife;
 public class DailyForecastActivity extends AppCompatActivity {
 
     private Day[] mDays;
-
     @BindView(android.R.id.list)
     ListView mListView;
     @BindView(android.R.id.empty)
     TextView emptyTextView;
+    @BindView(R.id.locationLabel)
+    TextView locationLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +58,7 @@ public class DailyForecastActivity extends AppCompatActivity {
                         dayOfTheWeek,
                         highTemp,
                         conditions);
-                Toast.makeText(DailyForecastActivity.this,message,Toast.LENGTH_LONG).show();
+                Toast.makeText(DailyForecastActivity.this, message, Toast.LENGTH_LONG).show();
             }
         });
     }

@@ -12,7 +12,7 @@ import com.example.android.stormy.R;
  * Created by ocarino99 on 2/27/18.
  */
 
-public class AlertDialogFragment extends DialogFragment{
+public class AlertDialogFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class AlertDialogFragment extends DialogFragment{
         AlertDialog.Builder builder = new AlertDialog.Builder(context)
                 .setTitle(R.string.error_title)
                 .setMessage(R.string.error_message)
-                .setPositiveButton(R.string.error_ok_button_text,null);
+                .setPositiveButton(R.string.error_ok_button_text, null);
 
         AlertDialog dialog = builder.create();
         return dialog;
