@@ -32,8 +32,6 @@ public class DailyForecastActivity extends AppCompatActivity {
     ListView mListView;
     @BindView(android.R.id.empty)
     TextView emptyTextView;
-    @BindView(R.id.locationLabel)
-    TextView locationLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
